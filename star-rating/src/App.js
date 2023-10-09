@@ -1,10 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-import StarRating from './StarRating';
+import React, { useState } from "react";
+import colorData from "./color-data.json";
+import ColorList from "./ColorList";
 
 function App() {
+  const [colors, setColors] = useState(colorData);
   return (
-    <StarRating />
+    <ColorList
+      colors={colors}
+      onRemoveColor={id => {
+        const newColors = colors.filter(color => color.id != id);
+        setColors(newColors);
+      }}
+    />
   );
 }
 // function App() {
