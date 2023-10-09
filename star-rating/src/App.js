@@ -1,11 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-import StarRating from './StarRating';
+import React, { useState } from "react";
+import colorData from "./color-data.json";
+import ColorList from "./ColorList";
 
 function App() {
-  return (
-    <StarRating />
-  );
+  const [colors] = useState(colorData);
+  return <ColorList colors={colors} />;
 }
 // function App() {
 //   return (
